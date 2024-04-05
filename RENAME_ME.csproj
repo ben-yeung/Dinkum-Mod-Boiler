@@ -16,6 +16,13 @@
 		<GamePath></GamePath>
 		<PluginPath>$(GamePath)/BepInEx/plugins/</PluginPath>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Other references... -->
+		<Reference Include="Assembly-CSharp">
+			<HintPath>Assembly-CSharp.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>

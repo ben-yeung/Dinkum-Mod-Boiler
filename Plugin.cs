@@ -29,6 +29,22 @@ namespace PluginName {
 			}
 		}
 
+		private void Update() {
+			CharMovement localChar = NetworkMapSharer.Instance.localChar;
+			if (!((object) localChar != (object) null) || !localChar.isLocalPlayer || Inventory.Instance.menuOpen || ChatBox.chat.chatOpen || !Inventory.Instance.CanMoveCharacter())
+					return;
+
+			if (Input.GetKeyDown(this._toggleButton.Value)) {
+				this._isEnabled.Value = !this._isEnabled.Value;
+				if (this._isEnabled.Value) {
+					NotificationManager.manage.createChatNotification($"Mod is now enabled");
+				} else {
+      				NotificationManager.manage.createChatNotification($"Mod is now disabled");
+				}
+			}
+
+		}
+
 		public static void Log(System.Object msg) {
 			Instance.Logger.LogInfo(msg);
 		}
