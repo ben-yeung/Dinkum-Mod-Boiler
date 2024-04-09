@@ -44,6 +44,9 @@ namespace PluginName {
 			}
 
 		}
+		public static bool checkEnabled() {
+			return Instance._isEnabled.Value;
+		}
 
 		public static void Log(System.Object msg) {
 			Instance.Logger.LogInfo(msg);
